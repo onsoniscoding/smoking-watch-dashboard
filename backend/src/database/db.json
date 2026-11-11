@@ -1,0 +1,36 @@
+{
+  "detections": [
+    {
+      "event_id": "EVT-TEST-002",
+      "timestamp": "2026-11-11T18:30:00+07:00",
+      "event_type": "smoking",
+      "confidence": 0.91,
+      "camera_id": "CAM-02",
+      "camera_name": "Building B",
+      "face_blurred": true,
+      "smoke_mandatory_gate": true,
+      "evidence_url": null,
+      "evidence_review_required": true,
+      "notification_status": "pending",
+      "received_at": "2026-11-11T16:58:34.914Z"
+    },
+    {
+      "event_id": "EVT-TEST-001",
+      "timestamp": "2026-11-11T18:00:00+07:00",
+      "event_type": "smoking",
+      "confidence": 0.95,
+      "camera_id": "CAM-01",
+      "camera_name": "Building A",
+      "face_blurred": true,
+      "smoke_mandatory_gate": true,
+      "evidence_url": null,
+      "evidence_review_required": true,
+      "notification_status": "pending",
+      "received_at": "2026-11-11T16:06:56.274Z"
+    }
+  ],
+  "system": {
+    "status": "online",
+    "last_heartbeat": "2026-11-11T16:08:03.430Z"
+  }
+}
