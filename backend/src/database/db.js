@@ -32,3 +32,4 @@ export async function initDatabase() {
 
   console.log('Database connected successfully')
 }
+

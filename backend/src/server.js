@@ -1,3 +1,6 @@
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
@@ -6,8 +9,14 @@ import { initDatabase } from './database/db.js'
 import detectionRoutes from './routes/detectionRoutes.js'
 import statisticsRoutes from './routes/statisticsRoutes.js'
 import systemRoutes from './routes/systemRoutes.js'
+import webcamRoutes from './routes/webcamRoutes.js'
 
 dotenv.config()
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const evidenceDir = path.resolve(__dirname, '../evidence')
+fs.mkdirSync(evidenceDir, { recursive: true })
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -19,7 +28,8 @@ app.use(cors({
   ]
 }))
 
-app.use(express.json({ limit: '1mb' }))
+app.use(express.json({ limit: '10mb' }))
+app.use('/evidence', express.static(evidenceDir))
 
 app.get('/api/health', (req, res) => {
   res.json({
@@ -32,6 +42,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api', detectionRoutes)
 app.use('/api', statisticsRoutes)
 app.use('/api', systemRoutes)
+app.use('/api', webcamRoutes)
 
 app.use((req, res) => {
   res.status(404).json({

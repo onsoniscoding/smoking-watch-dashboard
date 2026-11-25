@@ -1,5 +1,8 @@
-
 import { Eye } from 'lucide-react'
+
+const typeLabels = {
+  smoking: 'สูบบุหรี่'
+}
 
 export default function DetectionTable({
   detections = [],
@@ -9,10 +12,10 @@ export default function DetectionTable({
     <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
       <div className="p-5 border-b border-slate-100">
         <h3 className="font-semibold text-slate-800">
-          Recent Detection Events
+          รายการตรวจจับล่าสุด
         </h3>
         <p className="text-xs text-slate-400 mt-1">
-          Latest recorded events
+          เหตุการณ์สูบบุหรี่ที่บันทึกเข้ามาล่าสุดจากระบบ AI
         </p>
       </div>
 
@@ -20,12 +23,12 @@ export default function DetectionTable({
         <table className="w-full text-sm text-left">
           <thead className="bg-slate-50 text-slate-500">
             <tr>
-              <th className="p-4">Event ID</th>
-              <th className="p-4">Date & Time</th>
-              <th className="p-4">Camera</th>
-              <th className="p-4">Confidence</th>
-              <th className="p-4">Type</th>
-              <th className="p-4">Action</th>
+              <th className="p-4">รหัสเหตุการณ์</th>
+              <th className="p-4">วันและเวลา</th>
+              <th className="p-4">จุดติดตั้ง / กล้อง</th>
+              <th className="p-4">ความมั่นใจ</th>
+              <th className="p-4">ประเภท</th>
+              <th className="p-4">ดูหลักฐาน</th>
             </tr>
           </thead>
 
@@ -33,12 +36,12 @@ export default function DetectionTable({
             {detections.length === 0 ? (
               <tr>
                 <td colSpan="6" className="p-8 text-center text-slate-400">
-                  No detection events found
+                  ยังไม่มีรายการตรวจจับในขณะนี้
                 </td>
               </tr>
             ) : (
               detections.map((item) => (
-                <tr key={item.event_id} className="border-t border-slate-100">
+                <tr key={item.event_id} className="border-t border-slate-100 hover:bg-slate-50/70">
                   <td className="p-4 font-medium text-slate-700">
                     {item.event_id}
                   </td>
@@ -49,23 +52,24 @@ export default function DetectionTable({
 
                   <td className="p-4">{item.camera_name}</td>
 
-                  <td className="p-4">
+                  <td className="p-4 font-semibold text-slate-700">
                     {(item.confidence * 100).toFixed(1)}%
                   </td>
 
                   <td className="p-4">
-                    <span className="bg-amber-50 text-amber-700 px-2 py-1 rounded-lg">
-                      {item.event_type}
+                    <span className="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-lg text-xs font-medium">
+                      {typeLabels[item.event_type] || item.event_type}
                     </span>
                   </td>
 
                   <td className="p-4">
                     <button
                       onClick={() => onSelect?.(item)}
-                      className="text-emerald-600 hover:text-emerald-800"
-                      aria-label={`View ${item.event_id}`}
+                      className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-800 font-medium text-xs"
+                      aria-label={`ดูรายละเอียด ${item.event_id}`}
                     >
-                      <Eye size={18} />
+                      <Eye size={17} />
+                      ดูภาพ
                     </button>
                   </td>
                 </tr>

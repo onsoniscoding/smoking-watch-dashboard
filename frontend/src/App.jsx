@@ -10,6 +10,7 @@ import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 
 import Dashboard from './pages/Dashboard'
+import LiveWebcam from './pages/LiveWebcam'
 import DetectionLogs from './pages/DetectionLogs'
 import Statistics from './pages/Statistics'
 
@@ -35,6 +36,7 @@ export default function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/webcam" element={<LiveWebcam />} />
           <Route path="/logs" element={<DetectionLogs />} />
           <Route path="/statistics" element={<Statistics />} />
         </Route>

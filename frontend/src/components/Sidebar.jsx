@@ -1,7 +1,7 @@
-
 import { NavLink } from 'react-router-dom'
 import {
   LayoutDashboard,
+  Video,
   History,
   ChartNoAxesCombined,
   ShieldCheck,
@@ -10,17 +10,22 @@ import {
 
 const menus = [
   {
-    label: 'Dashboard',
+    label: 'ภาพรวมระบบ',
     path: '/',
     icon: LayoutDashboard
   },
   {
-    label: 'Detection Logs',
+    label: 'กล้องเว็บแคมสด',
+    path: '/webcam',
+    icon: Video
+  },
+  {
+    label: 'ประวัติการตรวจจับ',
     path: '/logs',
     icon: History
   },
   {
-    label: 'Statistics',
+    label: 'สถิติและกราฟ',
     path: '/statistics',
     icon: ChartNoAxesCombined
   }
@@ -29,16 +34,24 @@ const menus = [
 export default function Sidebar() {
   return (
     <aside className="w-64 min-h-screen bg-slate-950 text-white flex flex-col">
-      <div className="p-6 border-b border-slate-800">
+      <div className="p-5 border-b border-slate-800 space-y-3.5">
+        <div className="bg-white rounded-xl px-3.5 py-2.5 flex items-center justify-center shadow-sm">
+          <img
+            src="/spu-logo.png"
+            alt="Sripatum University (SPU)"
+            className="h-10 w-auto object-contain"
+          />
+        </div>
+
         <div className="flex items-center gap-3">
-          <div className="bg-emerald-500 p-2 rounded-xl">
-            <ShieldCheck size={25} />
+          <div className="bg-emerald-500 p-2 rounded-xl shrink-0">
+            <ShieldCheck size={22} />
           </div>
 
           <div>
-            <h1 className="text-xl font-bold">Smoke Watch</h1>
+            <h1 className="text-lg font-bold leading-tight">Smoke Watch</h1>
             <p className="text-xs text-slate-400">
-              Smart Detection System
+              ระบบตรวจจับการสูบบุหรี่อัจฉริยะ
             </p>
           </div>
         </div>
@@ -46,7 +59,7 @@ export default function Sidebar() {
 
       <nav className="p-4 flex-1 space-y-2">
         <p className="text-xs text-slate-500 uppercase px-3 py-2">
-          Main Menu
+          เมนูหลัก
         </p>
 
         {menus.map((menu) => {
@@ -75,10 +88,10 @@ export default function Sidebar() {
       <div className="p-4 border-t border-slate-800">
         <div className="flex items-center gap-2 text-emerald-400">
           <Activity size={17} />
-          <span className="text-sm">Smoke Watch Dashboard</span>
+          <span className="text-sm">ระบบเฝ้าระวังพื้นที่ปลอดบุหรี่</span>
         </div>
         <p className="text-xs text-slate-500 mt-2">
-          Project Prototype
+          เชื่อมต่อกับ CiRA CORE AI
         </p>
       </div>
     </aside>

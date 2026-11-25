@@ -22,23 +22,35 @@ export function getStatistics() {
   })
 
   const cameraCounts = {}
-
-  for (const item of detections) {
-    cameraCounts[item.camera_id] =
-      (cameraCounts[item.camera_id] || 0) + 1
-  }
-
   const eventTypeCounts = {}
+  const hourlyCounts = {}
+  let gatePassedCount = 0
 
   for (const item of detections) {
-    eventTypeCounts[item.event_type] =
-      (eventTypeCounts[item.event_type] || 0) + 1
+    const camLabel = item.camera_name || item.camera_id
+    cameraCounts[camLabel] = (cameraCounts[camLabel] || 0) + 1
+    eventTypeCounts[item.event_type] = (eventTypeCounts[item.event_type] || 0) + 1
+
+    if (item.smoke_mandatory_gate === true) {
+      gatePassedCount += 1
+    }
+
+    const hourStr = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Bangkok',
+      hour: '2-digit',
+      hour12: false
+    }).format(new Date(item.timestamp))
+    const key = `${hourStr}:00`
+    hourlyCounts[key] = (hourlyCounts[key] || 0) + 1
   }
 
   return {
     total_detections: detections.length,
     today_detections: todayDetections.length,
+    gate_passed_count: gatePassedCount,
+    gate_failed_count: Math.max(0, detections.length - gatePassedCount),
     camera_counts: cameraCounts,
-    event_type_counts: eventTypeCounts
+    event_type_counts: eventTypeCounts,
+    hourly_counts: hourlyCounts
   }
 }

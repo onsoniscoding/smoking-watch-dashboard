@@ -4,7 +4,8 @@ import { Router } from 'express'
 import {
   receiveDetection,
   listDetections,
-  getDetection
+  getDetection,
+  resetDetections
 } from '../controllers/detectionController.js'
 
 const router = Router()
@@ -31,6 +32,7 @@ function verifyAiKey(req, res, next) {
 
 router.post('/webhook/detection', verifyAiKey, receiveDetection)
 router.get('/detections', listDetections)
+router.delete('/detections/reset', resetDetections)
 router.get('/detections/:eventId', getDetection)
 
 export default router

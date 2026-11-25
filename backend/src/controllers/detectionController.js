@@ -1,7 +1,8 @@
 import {
   createDetection,
   getDetections,
-  getDetectionById
+  getDetectionById,
+  clearAllDetections
 } from '../services/detectionService.js'
 
 export async function receiveDetection(req, res) {
@@ -120,5 +121,13 @@ export function getDetection(req, res) {
   return res.json({
     success: true,
     data: detection
+  })
+}
+
+export async function resetDetections(req, res) {
+  await clearAllDetections()
+  return res.json({
+    success: true,
+    message: 'All demo detection records cleared'
   })
 }

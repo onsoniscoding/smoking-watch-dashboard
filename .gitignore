@@ -22,3 +22,9 @@ dist/
 npm-debug.log*
 
 backend/src/database/*.backup
+backend/evidence/
+backend/bad.list
+backend/predictions.jpg
+**/__pycache__/
+*.pyc
+cira_core_bridge/_auto_*.data
