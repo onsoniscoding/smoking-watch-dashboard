@@ -2,7 +2,8 @@ import {
   createDetection,
   getDetections,
   getDetectionById,
-  clearAllDetections
+  clearAllDetections,
+  reviewDetectionById
 } from '../services/detectionService.js'
 
 export async function receiveDetection(req, res) {
@@ -129,5 +130,24 @@ export async function resetDetections(req, res) {
   return res.json({
     success: true,
     message: 'All demo detection records cleared'
+  })
+}
+
+export async function reviewDetection(req, res) {
+  const { eventId } = req.params
+  const action = req.body?.action === 'reject' ? 'reject' : 'approve'
+
+  const result = await reviewDetectionById(eventId, action)
+  if (!result) {
+    return res.status(404).json({
+      success: false,
+      message: 'Detection event not found'
+    })
+  }
+
+  return res.json({
+    success: true,
+    message: action === 'reject' ? 'Detection rejected and removed' : 'Detection approved',
+    data: result
   })
 }

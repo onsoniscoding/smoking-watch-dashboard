@@ -14,3 +14,8 @@ export async function clearDemoDetections() {
   const response = await api.delete('/detections/reset')
   return response.data
 }
+
+export async function reviewDetection(eventId, action) {
+  const response = await api.patch(`/detections/${encodeURIComponent(eventId)}/review`, { action })
+  return response.data
+}

@@ -120,3 +120,29 @@ export function getDetectionById(eventId) {
     (item) => item.event_id === eventId
   )
 }
+
+export async function reviewDetectionById(eventId, action) {
+  const index = db.data.detections.findIndex(
+    (item) => item.event_id === eventId
+  )
+
+  if (index === -1) {
+    return null
+  }
+
+  if (action === 'reject') {
+    const [removed] = db.data.detections.splice(index, 1)
+    const filename = `${sanitizeFilename(eventId)}.jpg`
+    await fs.unlink(path.join(evidenceDir, filename)).catch(() => {})
+    await db.write()
+    return { deleted: true, event_id: removed.event_id }
+  }
+
+  const item = db.data.detections[index]
+  item.smoke_mandatory_gate = true
+  item.reviewed_by_admin = true
+  item.reviewed_at = new Date().toISOString()
+  await db.write()
+
+  return { deleted: false, detection: item }
+}

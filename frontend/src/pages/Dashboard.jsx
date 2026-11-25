@@ -297,6 +297,12 @@ export default function Dashboard() {
       <EvidenceModal
         selected={selected}
         onClose={() => setSelected(null)}
+        onReviewed={async (result, action) => {
+          if (action === 'approve' && result?.detection) {
+            setSelected(result.detection)
+          }
+          await loadDashboard()
+        }}
       />
     </div>
   )

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Search, RefreshCw, Eye, Download } from 'lucide-react'
+import { Search, RefreshCw, Eye, Download, CheckCircle2, Trash2 } from 'lucide-react'
 
-import { fetchDetections } from '../services/detectionService'
+import { fetchDetections, reviewDetection } from '../services/detectionService'
 import EvidenceModal from '../components/EvidenceModal'
 
 export default function DetectionLogs() {
@@ -172,7 +172,7 @@ export default function DetectionLogs() {
                   <th className="p-4">จุดติดตั้ง / กล้อง</th>
                   <th className="p-4">ความมั่นใจ</th>
                   <th className="p-4">เกณฑ์ยืนยัน</th>
-                  <th className="p-4">ดูรายละเอียด</th>
+                  <th className="p-4">การจัดการ / ดูหลักฐาน</th>
                 </tr>
               </thead>
 
@@ -215,24 +215,59 @@ export default function DetectionLogs() {
                       </td>
 
                       <td className="p-4">
-                        <span className={`px-2.5 py-1 rounded-lg text-xs font-medium ${
-                          item.smoke_mandatory_gate
-                            ? 'bg-emerald-50 text-emerald-700'
-                            : 'bg-amber-50 text-amber-700'
-                        }`}>
-                          {item.smoke_mandatory_gate ? 'ผ่านเกณฑ์ยืนยัน' : 'รอตรวจสอบ'}
-                        </span>
+                        {item.smoke_mandatory_gate ? (
+                          <span className="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 text-emerald-700">
+                            ผ่านเกณฑ์ยืนยัน{item.reviewed_by_admin ? ' ✓' : ''}
+                          </span>
+                        ) : (
+                          <button
+                            onClick={() => setSelected(item)}
+                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 transition"
+                            title="คลิกเพื่อเปิดดูภาพและตรวจสอบ"
+                          >
+                            รอตรวจสอบเพิ่มเติม
+                          </button>
+                        )}
                       </td>
 
                       <td className="p-4">
-                        <button
-                          onClick={() => setSelected(item)}
-                          className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-800 font-medium text-xs"
-                          aria-label={`ดูรายละเอียด ${item.event_id}`}
-                        >
-                          <Eye size={17} />
-                          ดูภาพ
-                        </button>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <button
+                            onClick={() => setSelected(item)}
+                            className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-800 font-medium text-xs px-2.5 py-1.5 rounded-lg hover:bg-emerald-50 transition"
+                            aria-label={`ดูรายละเอียด ${item.event_id}`}
+                          >
+                            <Eye size={16} />
+                            {item.smoke_mandatory_gate ? 'ดูภาพ' : 'ตรวจภาพ'}
+                          </button>
+
+                          {!item.smoke_mandatory_gate && (
+                            <>
+                              <button
+                                onClick={async () => {
+                                  await reviewDetection(item.event_id, 'approve')
+                                  await loadData()
+                                }}
+                                className="inline-flex items-center gap-1 text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg transition"
+                                title="ยืนยันว่าสูบบุหรี่จริง"
+                              >
+                                <CheckCircle2 size={14} />
+                                ยืนยัน
+                              </button>
+                              <button
+                                onClick={async () => {
+                                  await reviewDetection(item.event_id, 'reject')
+                                  await loadData()
+                                }}
+                                className="inline-flex items-center gap-1 text-xs font-medium text-rose-600 hover:bg-rose-50 border border-rose-200 px-2 py-1.5 rounded-lg transition"
+                                title="ไม่ใช่การสูบ (ลบรายการ)"
+                              >
+                                <Trash2 size={14} />
+                                ลบ
+                              </button>
+                            </>
+                          )}
+                        </div>
                       </td>
                     </tr>
                   ))
@@ -246,6 +281,12 @@ export default function DetectionLogs() {
       <EvidenceModal
         selected={selected}
         onClose={() => setSelected(null)}
+        onReviewed={async (result, action) => {
+          if (action === 'approve' && result?.detection) {
+            setSelected(result.detection)
+          }
+          await loadData()
+        }}
       />
     </div>
   )

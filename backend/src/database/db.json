@@ -1,36 +1,2603 @@
 {
   "detections": [
     {
-      "event_id": "EVT-TEST-002",
-      "timestamp": "2026-11-11T18:30:00+07:00",
+      "event_id": "EVT-CIRA-200657-5F3FE4",
+      "timestamp": "2026-11-25T20:06:57+07:00",
       "event_type": "smoking",
-      "confidence": 0.91,
-      "camera_id": "CAM-02",
-      "camera_name": "Building B",
-      "face_blurred": true,
+      "confidence": 0.7503,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
       "smoke_mandatory_gate": true,
-      "evidence_url": null,
-      "evidence_review_required": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9114,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6543,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200657-5F3FE4.jpg",
+      "evidence_review_required": false,
       "notification_status": "pending",
-      "received_at": "2026-11-11T16:58:34.914Z"
+      "received_at": "2026-11-25T13:06:57.567Z"
     },
     {
-      "event_id": "EVT-TEST-001",
-      "timestamp": "2026-11-11T18:00:00+07:00",
+      "event_id": "EVT-CIRA-200652-1791D4",
+      "timestamp": "2026-11-25T20:06:52+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7985,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9229,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7685,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200652-1791D4.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:52.937Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200641-AC6165",
+      "timestamp": "2026-11-25T20:06:41+07:00",
+      "event_type": "smoking",
+      "confidence": 0.5048,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.936,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4664,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200641-AC6165.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:41.874Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200636-AF693F",
+      "timestamp": "2026-11-25T20:06:36+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7484,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9548,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5578,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6467,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200636-AF693F.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:36.994Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200630-B31689",
+      "timestamp": "2026-11-25T20:06:30+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7135,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9452,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6501,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200630-B31689.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:30.485Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200625-35BE38",
+      "timestamp": "2026-11-25T20:06:25+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7269,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9672,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5295,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6596,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200625-35BE38.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:25.746Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200622-B6ACA1",
+      "timestamp": "2026-11-25T20:06:22+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7069,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.8886,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6769,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200622-B6ACA1.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:22.036Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200616-9F9BF3",
+      "timestamp": "2026-11-25T20:06:16+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7021,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.987,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5046,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200616-9F9BF3.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:16.595Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200608-EAE637",
+      "timestamp": "2026-11-25T20:06:08+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9325,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9759,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5851,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.752,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200608-EAE637.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:08.857Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200604-12BF62",
+      "timestamp": "2026-11-25T20:06:04+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7327,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9025,
+          "name": "person"
+        },
+        {
+          "confidence": 0.681,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200604-12BF62.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:06:04.200Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200557-A61D99",
+      "timestamp": "2026-11-25T20:05:57+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7931,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9749,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6612,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7431,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200557-A61D99.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:05:57.478Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200552-FD2A8A",
+      "timestamp": "2026-11-25T20:05:52+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8514,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9433,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8014,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200552-FD2A8A.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:05:52.660Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200542-8C2438",
+      "timestamp": "2026-11-25T20:05:42+07:00",
+      "event_type": "smoking",
+      "confidence": 0.6473,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9351,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6173,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200542-8C2438.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:05:43.004Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200531-54A1FE",
+      "timestamp": "2026-11-25T20:05:31+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8773,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9329,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8473,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200531-54A1FE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:05:31.357Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200524-039679",
+      "timestamp": "2026-11-25T20:05:24+07:00",
+      "event_type": "smoking",
+      "confidence": 0.709,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.921,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6549,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200524-039679.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:05:24.345Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200519-DCC29A",
+      "timestamp": "2026-11-25T20:05:19+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8473,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": false,
+      "detected_objects": [
+        {
+          "confidence": 0.9329,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8473,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200519-DCC29A.jpg",
+      "evidence_review_required": false,
+      "notification_status": "skipped",
+      "received_at": "2026-11-25T13:05:19.783Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200507-ADDE87",
+      "timestamp": "2026-11-25T20:05:07+07:00",
+      "event_type": "smoking",
+      "confidence": 0.742,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9429,
+          "name": "person"
+        },
+        {
+          "confidence": 0.65,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200507-ADDE87.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:05:07.920Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200459-D317A9",
+      "timestamp": "2026-11-25T20:04:59+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7045,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.936,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4664,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6545,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200459-D317A9.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:04:59.442Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200446-C043DA",
+      "timestamp": "2026-11-25T20:04:46+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8773,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9329,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8473,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200446-C043DA.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:04:46.048Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200428-83CBBA",
+      "timestamp": "2026-11-25T20:04:28+07:00",
+      "event_type": "smoking",
+      "confidence": 0.725,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9085,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5174,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200428-83CBBA.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:04:28.148Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200423-20FD09",
+      "timestamp": "2026-11-25T20:04:23+07:00",
+      "event_type": "smoking",
+      "confidence": 0.709,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9481,
+          "name": "person"
+        },
+        {
+          "confidence": 0.659,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200423-20FD09.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:04:23.354Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200418-3B9B89",
+      "timestamp": "2026-11-25T20:04:18+07:00",
+      "event_type": "smoking",
+      "confidence": 0.6003,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9459,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5703,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200418-3B9B89.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:04:18.847Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200414-DD2591",
+      "timestamp": "2026-11-25T20:04:14+07:00",
       "event_type": "smoking",
       "confidence": 0.95,
-      "camera_id": "CAM-01",
-      "camera_name": "Building A",
-      "face_blurred": true,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
       "smoke_mandatory_gate": true,
-      "evidence_url": null,
-      "evidence_review_required": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9706,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6395,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7304,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200414-DD2591.jpg",
+      "evidence_review_required": false,
       "notification_status": "pending",
-      "received_at": "2026-11-11T16:06:56.274Z"
+      "received_at": "2026-11-25T13:04:14.105Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200409-39DC99",
+      "timestamp": "2026-11-25T20:04:09+07:00",
+      "event_type": "smoking",
+      "confidence": 0.718,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9429,
+          "name": "person"
+        },
+        {
+          "confidence": 0.65,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200409-39DC99.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:04:09.079Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200402-A5B190",
+      "timestamp": "2026-11-25T20:04:02+07:00",
+      "event_type": "smoking",
+      "confidence": 0.95,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9694,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7305,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7345,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200402-A5B190.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:04:02.151Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200357-9BDB7F",
+      "timestamp": "2026-11-25T20:03:57+07:00",
+      "event_type": "smoking",
+      "confidence": 0.731,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9025,
+          "name": "person"
+        },
+        {
+          "confidence": 0.681,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200357-9BDB7F.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:03:57.528Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200352-7C69C0",
+      "timestamp": "2026-11-25T20:03:52+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8044,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9368,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5051,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200352-7C69C0.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:03:52.818Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200347-687714",
+      "timestamp": "2026-11-25T20:03:47+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7615,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9321,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7115,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6517,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200347-687714.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:03:47.615Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200331-61A42A",
+      "timestamp": "2026-11-25T20:03:31+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7356,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.974,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5478,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6856,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200331-61A42A.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:03:31.370Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200322-B2E1ED",
+      "timestamp": "2026-11-25T20:03:22+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7581,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9546,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4748,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200322-B2E1ED.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:03:22.153Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200315-54767D",
+      "timestamp": "2026-11-25T20:03:15+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9325,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9857,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7133,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200315-54767D.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:03:15.942Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200312-8AD5AE",
+      "timestamp": "2026-11-25T20:03:12+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8825,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": false,
+      "detected_objects": [
+        {
+          "confidence": 0.9088,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8825,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200312-8AD5AE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "skipped",
+      "received_at": "2026-11-25T13:03:12.270Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200251-102D69",
+      "timestamp": "2026-11-25T20:02:51+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7126,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9076,
+          "name": "person"
+        },
+        {
+          "confidence": 0.3632,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200251-102D69.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:51.251Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200244-8D3A6A",
+      "timestamp": "2026-11-25T20:02:44+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7594,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9655,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5319,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200244-8D3A6A.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:44.926Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200235-720B90",
+      "timestamp": "2026-11-25T20:02:35+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7357,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9632,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6612,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200235-720B90.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:35.419Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200229-2F41F4",
+      "timestamp": "2026-11-25T20:02:29+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7622,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.975,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5661,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7122,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200229-2F41F4.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:29.162Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200222-F8A605",
+      "timestamp": "2026-11-25T20:02:22+07:00",
+      "event_type": "smoking",
+      "confidence": 0.731,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9446,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6451,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200222-F8A605.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:22.746Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200208-7D3543",
+      "timestamp": "2026-11-25T20:02:08+07:00",
+      "event_type": "smoking",
+      "confidence": 0.701,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9442,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5949,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200208-7D3543.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:08.630Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200204-4B0A26",
+      "timestamp": "2026-11-25T20:02:04+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7347,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9598,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4958,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.651,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200204-4B0A26.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:04.755Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200200-4A27DE",
+      "timestamp": "2026-11-25T20:02:00+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9325,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.8007,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6847,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200200-4A27DE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:02:00.901Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200157-C21807",
+      "timestamp": "2026-11-25T20:01:57+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9125,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9088,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8825,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200157-C21807.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:01:57.139Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200131-7FC4F5",
+      "timestamp": "2026-11-25T20:01:31+07:00",
+      "event_type": "smoking",
+      "confidence": 0.5566,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9517,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5266,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200131-7FC4F5.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:01:31.573Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200114-08F11A",
+      "timestamp": "2026-11-25T20:01:14+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7747,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9632,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6421,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200114-08F11A.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:01:14.928Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200108-38DC8A",
+      "timestamp": "2026-11-25T20:01:08+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7028,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9315,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6728,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200108-38DC8A.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:01:08.181Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200052-8613F4",
+      "timestamp": "2026-11-25T20:00:52+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8003,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9639,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7503,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200052-8613F4.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:52.525Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200049-DE127F",
+      "timestamp": "2026-11-25T20:00:49+07:00",
+      "event_type": "smoking",
+      "confidence": 0.794,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9628,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5506,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6636,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200049-DE127F.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:49.139Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200038-3DD341",
+      "timestamp": "2026-11-25T20:00:38+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7436,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.974,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6936,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200038-3DD341.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:39.015Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200033-67AAFC",
+      "timestamp": "2026-11-25T20:00:33+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7694,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9117,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4528,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200033-67AAFC.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:33.673Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200029-3D8630",
+      "timestamp": "2026-11-25T20:00:29+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8013,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.8984,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6773,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200029-3D8630.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:29.066Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200024-E4BC80",
+      "timestamp": "2026-11-25T20:00:24+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7405,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9474,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6905,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200024-E4BC80.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:24.194Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200019-5875A6",
+      "timestamp": "2026-11-25T20:00:19+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7531,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9806,
+          "name": "person"
+        },
+        {
+          "confidence": 0.3818,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7031,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200019-5875A6.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:19.601Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200015-942D12",
+      "timestamp": "2026-11-25T20:00:15+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7749,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.974,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6319,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200015-942D12.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:15.049Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200006-17E1CE",
+      "timestamp": "2026-11-25T20:00:06+07:00",
+      "event_type": "smoking",
+      "confidence": 0.896,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9815,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7157,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.822,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200006-17E1CE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:06.622Z"
+    },
+    {
+      "event_id": "EVT-CIRA-200001-195A30",
+      "timestamp": "2026-11-25T20:00:01+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7179,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9246,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6187,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-200001-195A30.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T13:00:01.760Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195931-BBFD55",
+      "timestamp": "2026-11-25T19:59:31+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7296,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.8979,
+          "name": "person"
+        },
+        {
+          "confidence": 0.3858,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195931-BBFD55.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:59:31.223Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195922-ACB80B",
+      "timestamp": "2026-11-25T19:59:22+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7032,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9582,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4048,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195922-ACB80B.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:59:22.413Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195909-47D9A0",
+      "timestamp": "2026-11-25T19:59:09+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8639,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9453,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8139,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.684,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195909-47D9A0.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:59:09.775Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195858-18866E",
+      "timestamp": "2026-11-25T19:58:58+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9312,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9107,
+          "name": "person"
+        },
+        {
+          "confidence": 0.9012,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195858-18866E.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:58.351Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195854-A926A3",
+      "timestamp": "2026-11-25T19:58:54+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9198,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9638,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8698,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195854-A926A3.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:54.775Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195848-374892",
+      "timestamp": "2026-11-25T19:58:48+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8869,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9746,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4009,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6779,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195848-374892.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:48.687Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195844-132382",
+      "timestamp": "2026-11-25T19:58:44+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8669,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9393,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8369,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195844-132382.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:44.825Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195841-0BDFBD",
+      "timestamp": "2026-11-25T19:58:41+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7208,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9542,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5518,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195841-0BDFBD.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:41.308Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195833-654DF4",
+      "timestamp": "2026-11-25T19:58:33+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8409,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9765,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6176,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7909,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195833-654DF4.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:33.639Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195829-8D00EE",
+      "timestamp": "2026-11-25T19:58:29+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7436,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.974,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6936,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195829-8D00EE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:29.748Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195825-A88B55",
+      "timestamp": "2026-11-25T19:58:25+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7351,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9114,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5193,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195825-A88B55.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:25.350Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195815-E3CCC1",
+      "timestamp": "2026-11-25T19:58:15+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8177,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9711,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5597,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6711,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195815-E3CCC1.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:15.109Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195811-433A66",
+      "timestamp": "2026-11-25T19:58:11+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8177,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9745,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6694,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7677,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195811-433A66.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:11.201Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195807-6B75BC",
+      "timestamp": "2026-11-25T19:58:07+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7436,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.974,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6936,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195807-6B75BC.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:58:07.054Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195755-D5B8E1",
+      "timestamp": "2026-11-25T19:57:55+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7378,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9698,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6698,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195755-D5B8E1.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:57:55.776Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195740-64D196",
+      "timestamp": "2026-11-25T19:57:40+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8143,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": false,
+      "detected_objects": [
+        {
+          "confidence": 0.9274,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8143,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195740-64D196.jpg",
+      "evidence_review_required": false,
+      "notification_status": "skipped",
+      "received_at": "2026-11-25T12:57:40.240Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195725-8B517B",
+      "timestamp": "2026-11-25T19:57:25+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8704,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9632,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6578,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195725-8B517B.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:57:25.562Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195721-0D1780",
+      "timestamp": "2026-11-25T19:57:21+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8704,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.982,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6367,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.8204,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195721-0D1780.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:57:21.150Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195713-043F30",
+      "timestamp": "2026-11-25T19:57:13+07:00",
+      "event_type": "smoking",
+      "confidence": 0.5397,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9586,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4497,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195713-043F30.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:57:13.398Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195701-AF6FC0",
+      "timestamp": "2026-11-25T19:57:01+07:00",
+      "event_type": "smoking",
+      "confidence": 0.5663,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9113,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5363,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195701-AF6FC0.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:57:01.173Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195649-7EE2BE",
+      "timestamp": "2026-11-25T19:56:49+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8178,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9832,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7678,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195649-7EE2BE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:56:49.979Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195639-63C71E",
+      "timestamp": "2026-11-25T19:56:39+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7583,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9686,
+          "name": "person"
+        },
+        {
+          "confidence": 0.3945,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.4435,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7083,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195639-63C71E.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:56:39.963Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195635-72A330",
+      "timestamp": "2026-11-25T19:56:35+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9427,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9676,
+          "name": "person"
+        },
+        {
+          "confidence": 0.4772,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195635-72A330.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:56:35.881Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195632-E01E9F",
+      "timestamp": "2026-11-25T19:56:32+07:00",
+      "event_type": "smoking",
+      "confidence": 0.9127,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": false,
+      "detected_objects": [
+        {
+          "confidence": 0.9296,
+          "name": "person"
+        },
+        {
+          "confidence": 0.9127,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195632-E01E9F.jpg",
+      "evidence_review_required": false,
+      "notification_status": "skipped",
+      "received_at": "2026-11-25T12:56:32.063Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195431-A76ACE",
+      "timestamp": "2026-11-25T19:54:31+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7347,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9698,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6698,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195431-A76ACE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:54:31.575Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195405-92EAAB",
+      "timestamp": "2026-11-25T19:54:05+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8681,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9412,
+          "name": "person"
+        },
+        {
+          "confidence": 0.8381,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195405-92EAAB.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:54:05.308Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195359-F0E9A6",
+      "timestamp": "2026-11-25T19:53:59+07:00",
+      "event_type": "smoking",
+      "confidence": 0.896,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9715,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7681,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.8048,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195359-F0E9A6.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:53:59.696Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195354-75E5F5",
+      "timestamp": "2026-11-25T19:53:54+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7079,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9542,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5518,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195354-75E5F5.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:53:54.360Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195343-7340FD",
+      "timestamp": "2026-11-25T19:53:43+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8003,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9639,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7503,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195343-7340FD.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:53:43.234Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195319-EAA2CE",
+      "timestamp": "2026-11-25T19:53:19+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8111,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9164,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7811,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195319-EAA2CE.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:53:19.997Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195311-79AAF9",
+      "timestamp": "2026-11-25T19:53:11+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8281,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9746,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5206,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7781,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195311-79AAF9.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:53:11.550Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195305-3F7A06",
+      "timestamp": "2026-11-25T19:53:05+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8213,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9562,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7713,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195305-3F7A06.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:53:05.757Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195256-327C6C",
+      "timestamp": "2026-11-25T19:52:56+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7773,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9335,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7473,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195256-327C6C.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:52:56.331Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195240-C951F2",
+      "timestamp": "2026-11-25T19:52:40+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8414,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9567,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7914,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195240-C951F2.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:52:40.758Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195237-D92FE8",
+      "timestamp": "2026-11-25T19:52:37+07:00",
+      "event_type": "smoking",
+      "confidence": 0.715,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9672,
+          "name": "person"
+        },
+        {
+          "confidence": 0.537,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.665,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195237-D92FE8.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:52:37.042Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195225-8CC088",
+      "timestamp": "2026-11-25T19:52:25+07:00",
+      "event_type": "smoking",
+      "confidence": 0.655,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9248,
+          "name": "person"
+        },
+        {
+          "confidence": 0.625,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195225-8CC088.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:52:25.503Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195220-AB3444",
+      "timestamp": "2026-11-25T19:52:20+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7713,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9777,
+          "name": "person"
+        },
+        {
+          "confidence": 0.5575,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7213,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195220-AB3444.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:52:20.190Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195215-E14E1A",
+      "timestamp": "2026-11-25T19:52:15+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7884,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9595,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7384,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195215-E14E1A.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:52:15.333Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195157-0A756E",
+      "timestamp": "2026-11-25T19:51:57+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8066,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9757,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7566,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6777,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195157-0A756E.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:51:57.639Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195144-4C59B9",
+      "timestamp": "2026-11-25T19:51:44+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8566,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9715,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7681,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.8066,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195144-4C59B9.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:51:44.896Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195126-9E3733",
+      "timestamp": "2026-11-25T19:51:26+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7973,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9335,
+          "name": "person"
+        },
+        {
+          "confidence": 0.7473,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195126-9E3733.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:51:26.864Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195122-DAFEC4",
+      "timestamp": "2026-11-25T19:51:22+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7292,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9704,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6241,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.6792,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195122-DAFEC4.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:51:22.475Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195105-845688",
+      "timestamp": "2026-11-25T19:51:05+07:00",
+      "event_type": "smoking",
+      "confidence": 0.8409,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9743,
+          "name": "person"
+        },
+        {
+          "confidence": 0.428,
+          "name": "cigarette"
+        },
+        {
+          "confidence": 0.7909,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195105-845688.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:51:05.241Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195101-4E0B79",
+      "timestamp": "2026-11-25T19:51:01+07:00",
+      "event_type": "smoking",
+      "confidence": 0.7028,
+      "camera_id": "CAM-CCTV-01",
+      "camera_name": "กล้องโถงทางเดินอาคาร (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9315,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6728,
+          "name": "cigarette"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195101-4E0B79.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:51:01.616Z"
+    },
+    {
+      "event_id": "EVT-CIRA-195101-ADC698",
+      "timestamp": "2026-11-25T19:51:01+07:00",
+      "event_type": "smoking",
+      "confidence": 0.6002,
+      "camera_id": "CAM-02",
+      "camera_name": "กล้องทดสอบภาพนิ่ง (CiRA AI)",
+      "face_blurred": false,
+      "smoke_mandatory_gate": true,
+      "detected_objects": [
+        {
+          "confidence": 0.9315,
+          "name": "person"
+        },
+        {
+          "confidence": 0.6002,
+          "name": "smoke"
+        }
+      ],
+      "source": "CiRA CORE 2-Stage ROI Ensemble",
+      "evidence_url": "http://localhost:3000/evidence/EVT-CIRA-195101-ADC698.jpg",
+      "evidence_review_required": false,
+      "notification_status": "pending",
+      "received_at": "2026-11-25T12:51:01.278Z"
     }
   ],
   "system": {
     "status": "online",
-    "last_heartbeat": "2026-11-11T16:08:03.430Z"
+    "last_heartbeat": "2026-11-25T16:50:00.237Z"
   }
 }

@@ -5,7 +5,8 @@ import {
   receiveDetection,
   listDetections,
   getDetection,
-  resetDetections
+  resetDetections,
+  reviewDetection
 } from '../controllers/detectionController.js'
 
 const router = Router()
@@ -33,6 +34,7 @@ function verifyAiKey(req, res, next) {
 router.post('/webhook/detection', verifyAiKey, receiveDetection)
 router.get('/detections', listDetections)
 router.delete('/detections/reset', resetDetections)
+router.patch('/detections/:eventId/review', reviewDetection)
 router.get('/detections/:eventId', getDetection)
 
 export default router
