@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Instant-Start Shared Live Webcam MJPEG + CiRA CUDA Broker (127.0.0.1:3099)
+Shared Live Webcam MJPEG + 2-Model CiRA CUDA Broker (127.0.0.1:3099)
 Features:
-  1. Binds HTTP port 3099 in <0.2s BEFORE lazy-loading GPU models in background,
-     so browser `<img>` streams smooth 25-30 FPS DirectShow video immediately (<0.4s)!
+  1. Binds HTTP port 3099 immediately before lazy-loading GPU models in background,
+     streaming live DirectShow video (~7.4 FPS in indoor auto-exposure) without blocking.
   2. Uses 2 lightweight CUDA models (`person_coco` + `smoking_evidence`) to keep VRAM low
-     (~380 MiB), coexisting smoothly alongside CiRA CORE's 4/4 GPU models on 4 GB GTX 1650.
-  3. Exposes `GET /raw_frame` so BOTH the Web Dashboard (`/webcam`) AND CiRA CORE (`lopo.npj`)
-     can use the USB webcam AT THE SAME TIME without fighting over the Windows camera lock!
-  4. Anti-hallucination filters: rejects straws/cups/bottles/phones, background walls, and motion blur.
+     (~517 MiB), coexisting smoothly alongside CiRA CORE's 4/4 GPU models on 4 GB GTX 1650.
+  3. Exposes `GET /raw_frame` WITH live `person` + `confounders` metadata even when only
+     CiRA CORE (`lopo.npj`) is reading, so both Web (`/webcam`) and CiRA Webcam get
+     2-Stage Person-ROI & cup/bottle confounder protection with unified 4-frame consensus!
 """
 
 from __future__ import print_function
@@ -266,11 +266,13 @@ class SmoothWebcamEngine(object):
         last_processed_seq = -1
         try:
             while True:
+                now_loop = time.time()
                 with self.lock:
-                    if not self.running or self.active_clients <= 0:
-                        if not self.running:
-                            break
-                        # Pause web AI when only CiRA CORE /raw_frame is reading (CiRA runs its own DeepDetect)
+                    if not self.running:
+                        break
+                    web_clients = self.active_clients
+                    cira_only = (web_clients <= 0) and (now_loop < self.snapshot_lease_until)
+                    if web_clients <= 0 and not cira_only:
                         time.sleep(0.15)
                         continue
                     ready = self.ai_ready
@@ -298,45 +300,80 @@ class SmoothWebcamEngine(object):
                 last_processed_seq = seq
                 t_start = time.time()
                 try:
-                    best_person, raw_objs, confounders = run_two_stage_inference(
-                        frm, p_det, e_det, None, None, return_confounders=True
-                    )
-                    objs = filter_webcam_objects(best_person, raw_objs, confounders)
-                    sw_info = {"detected": bool(objs), "sent": False}
-
-                    if record_flag:
-                        ctx = {
-                            "payload": {"DeepDetect": {"count": len(objs), "objects": objs}},
-                            "img": frm,
-                            "CAMERA_ID": "CAM-WEBCAM-0%d" % (cam_idx + 1),
-                            "CAMERA_PRESET": "webcam",
-                            "COOLDOWN_SEC": 4.5,
-                            "MIN_TEMPORAL_HITS": 4,
-                            "MIN_CIG_CONF": 0.64,
-                            "MIN_SMOKE_CONF": 0.50,
-                            "STRICT_WEBCAM": True,
-                            "DIRECT_CONFOUNDERS": confounders,
-                            "DIRECT_CROP_CTX": {"active": False, "person": best_person},
-                            "DIRECT_PERSON_BOX": best_person,
-                        }
-                        with open(WEBHOOK_SCRIPT, "rb") as wf:
-                            exec(compile(wf.read(), "cira_webhook_node.py", "exec"), ctx)
-                        sw_info = ctx["payload"].get("SmokeWatch", sw_info)
-
-                    with self.lock:
-                        self.latest_person = best_person
-                        self.latest_objects = objs
-                        self.latest_confounders = confounders
-                        self.latest_sw = sw_info
-                        if sw_info.get("sent") and sw_info.get("event_id"):
-                            ev_item = {
-                                "event_id": sw_info["event_id"],
-                                "confidence": sw_info.get("confidence", 0.0),
-                                "gate": sw_info.get("smoke_mandatory_gate", False),
-                                "time": time.strftime("%H:%M:%S"),
+                    if cira_only:
+                        # Stage-1 only (`person_coco`) for CiRA CORE Row 3: supplies person ROI + cup/bottle confounders!
+                        p_objs = p_det.detect_frame(frm)
+                        persons = [o for o in p_objs if o["name"] == "person" and o["confidence"] >= 25.0]
+                        confounders = [
+                            {
+                                "name": o["name"],
+                                "confidence": round(o["confidence"] / 100.0, 4),
+                                "x": o["x"],
+                                "y": o["y"],
+                                "w": o["w"],
+                                "h": o["h"],
+                                "is_topleft": True,
                             }
-                            if not self.recent_events or self.recent_events[0]["event_id"] != ev_item["event_id"]:
-                                self.recent_events = [ev_item] + self.recent_events[:5]
+                            for o in p_objs
+                            if o["name"] in ("cup", "bottle", "wine glass", "cell phone", "bowl", "toothbrush")
+                            and o["confidence"] >= 20.0
+                        ]
+                        best_person = None
+                        if persons:
+                            persons.sort(key=lambda p: (p["w"] * p["h"]) * (0.7 + 0.3 * (p["confidence"] / 100.0)), reverse=True)
+                            bp = persons[0]
+                            best_person = {
+                                "name": "person",
+                                "confidence": round(bp["confidence"] / 100.0, 4),
+                                "x": bp["x"],
+                                "y": bp["y"],
+                                "w": bp["w"],
+                                "h": bp["h"],
+                                "is_topleft": True,
+                            }
+                        with self.lock:
+                            self.latest_person = best_person
+                            self.latest_confounders = confounders
+                    else:
+                        best_person, raw_objs, confounders = run_two_stage_inference(
+                            frm, p_det, e_det, None, None, return_confounders=True
+                        )
+                        objs = filter_webcam_objects(best_person, raw_objs, confounders)
+                        sw_info = {"detected": bool(objs), "sent": False}
+
+                        if record_flag:
+                            ctx = {
+                                "payload": {"DeepDetect": {"count": len(objs), "objects": objs}},
+                                "img": frm,
+                                "CAMERA_ID": "CAM-WEBCAM-0%d" % (cam_idx + 1),
+                                "CAMERA_PRESET": "webcam",
+                                "COOLDOWN_SEC": 4.5,
+                                "MIN_TEMPORAL_HITS": 4,
+                                "MIN_CIG_CONF": 0.64,
+                                "MIN_SMOKE_CONF": 0.50,
+                                "STRICT_WEBCAM": True,
+                                "DIRECT_CONFOUNDERS": confounders,
+                                "DIRECT_CROP_CTX": {"active": False, "person": best_person},
+                                "DIRECT_PERSON_BOX": best_person,
+                            }
+                            with open(WEBHOOK_SCRIPT, "rb") as wf:
+                                exec(compile(wf.read(), "cira_webhook_node.py", "exec"), ctx)
+                            sw_info = ctx["payload"].get("SmokeWatch", sw_info)
+
+                        with self.lock:
+                            self.latest_person = best_person
+                            self.latest_objects = objs
+                            self.latest_confounders = confounders
+                            self.latest_sw = sw_info
+                            if sw_info.get("sent") and sw_info.get("event_id"):
+                                ev_item = {
+                                    "event_id": sw_info["event_id"],
+                                    "confidence": sw_info.get("confidence", 0.0),
+                                    "gate": sw_info.get("smoke_mandatory_gate", False),
+                                    "time": time.strftime("%H:%M:%S"),
+                                }
+                                if not self.recent_events or self.recent_events[0]["event_id"] != ev_item["event_id"]:
+                                    self.recent_events = [ev_item] + self.recent_events[:5]
                 except Exception as exc:
                     with self.lock:
                         self.last_error = str(exc)
@@ -352,7 +389,7 @@ class SmoothWebcamEngine(object):
         with self.lock:
             self.snapshot_lease_until = time.time() + 5.0
 
-        if not self.start_if_needed(cam_idx=cam_idx, auto_record=None, need_web_ai=False):
+        if not self.start_if_needed(cam_idx=cam_idx, auto_record=None, need_web_ai=True):
             return None, {}
 
         with self.lock:

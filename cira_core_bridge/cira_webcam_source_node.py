@@ -1,16 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-CiRA CORE Non-Freezing Live Webcam Source Node (`lopo.npj` Row 3)
-Replaces CiRA CORE's buggy MSMF C++ `WebCam` node (which hangs on USB UVC cameras).
-  1. Fetches live 30-FPS frames in ~2ms from the shared broker `http://127.0.0.1:3099/raw_frame`,
-     allowing BOTH CiRA CORE and the Web Dashboard (`/webcam`) to use the camera simultaneously!
-  2. Auto-starts `webcam_daemon.py` in the background if port 3099 is not running yet.
-  3. Falls back cleanly to `cv2.VideoCapture(0, cv2.CAP_DSHOW)` if needed.
+CiRA CORE Non-Freezing Live Webcam Source + Person-ROI Crop Node (`lopo.npj` Row 3)
+Replaces CiRA CORE's buggy MSMF C++ `WebCam` node AND upgrades Row 3 to 2-Stage ROI:
+  1. Fetches live frames from the shared broker `http://127.0.0.1:3099/raw_frame`,
+     receiving `person` + `confounders` (`cup`, `bottle`, `wine glass`, `cell phone`)
+     from the broker's `person_coco` detector even when `/webcam` browser tab is closed!
+  2. When a person is farther from the webcam (`pw < fw * 0.65`), crops their upper-body
+     head/mouth/hand ROI (`_crop_ctx`) so CiRA's single `SMOKING_EVIDENCE` node detects
+     small cigarettes accurately while staying within the 4/4 AI model limit!
+  3. Falls back cleanly to `cv2.VideoCapture(0, cv2.CAP_DSHOW)` if broker is unavailable.
 Pure 7-bit ASCII & forward-slash safe for CiRA CORE `PythonScript`.
 """
 
 import json
+import os
 import subprocess
+import tempfile
 import time
 
 import cv2
@@ -23,6 +28,25 @@ except ImportError:
 
 CAM_INDEX = int(globals().get("CAM_INDEX", 0))
 BROKER_URL = "http://127.0.0.1:3099/raw_frame?cam=%d" % CAM_INDEX
+TEMP_DIR_SLASH = tempfile.gettempdir().replace("\\", "/")
+WEBCAM_SEQ_FILE = TEMP_DIR_SLASH + "/smoke_watch_webcam_seq.txt"
+
+
+def _next_webcam_slot_path():
+    seq = 0
+    try:
+        if os.path.exists(WEBCAM_SEQ_FILE):
+            with open(WEBCAM_SEQ_FILE, "r") as f:
+                seq = int(f.read().strip() or "0") + 1
+    except Exception:
+        seq = int(time.time() * 1000)
+    try:
+        with open(WEBCAM_SEQ_FILE, "w") as f:
+            f.write(str(seq))
+    except Exception:
+        pass
+    slot = seq % 10
+    return (TEMP_DIR_SLASH + "/smoke_watch_webcam_full_%d.jpg" % slot).replace("\\", "/")
 
 
 def _fetch_from_broker(timeout_sec=1.2):
@@ -55,7 +79,6 @@ def _spawn_broker_detached():
             "call C:/opt/ros/melodic/x64/setup.bat >nul 2>&1 && "
             "C:/opt/ros/melodic/x64/python.exe -u D:/SmokeDetect/cira_core_bridge/webcam_daemon.py"
         )
-        # DETACHED_PROCESS (0x00000008) | CREATE_NO_WINDOW (0x08000000)
         subprocess.Popen(
             ["cmd.exe", "/d", "/s", "/c", cmd],
             close_fds=True,
@@ -79,7 +102,6 @@ def capture_live_webcam(pl):
         except Exception:
             frame = None
 
-    # DirectShow hardware fallback if broker is unreachable
     if frame is None:
         cap = cv2.VideoCapture(CAM_INDEX, cv2.CAP_DSHOW)
         if cap.isOpened():
@@ -101,12 +123,45 @@ def capture_live_webcam(pl):
             (80, 80, 240),
             2,
         )
+        return pl, frame
 
-    if isinstance(pl, dict) and isinstance(meta, dict) and (meta.get("person") or meta.get("confounders")):
-        pl["_webcam_meta"] = {
-            "person": meta.get("person"),
-            "confounders": meta.get("confounders") or [],
-        }
+    fh, fw = frame.shape[:2]
+    person = meta.get("person") if isinstance(meta, dict) else None
+    confounders = (meta.get("confounders") or []) if isinstance(meta, dict) else []
+
+    if isinstance(pl, dict):
+        if isinstance(person, dict):
+            px, py, pw, ph = int(person["x"]), int(person["y"]), int(person["w"]), int(person["h"])
+            # When person occupies < 65% of frame width, crop upper-body/head/hand ROI for Stage-2 accuracy!
+            if 24 < pw < int(fw * 0.65) and ph > 40:
+                cx1 = max(0, int(px - pw * 0.25))
+                cy1 = max(0, int(py - ph * 0.08))
+                cx2 = min(fw, int(px + pw * 1.45))
+                cy2 = min(fh, int(py + ph * 0.80))
+                if (cx2 - cx1) > 60 and (cy2 - cy1) > 60:
+                    slot_path = _next_webcam_slot_path()
+                    cv2.imwrite(slot_path, frame, [int(cv2.IMWRITE_JPEG_QUALITY), 90])
+                    cropped = frame[cy1:cy2, cx1:cx2].copy()
+                    pl["_crop_ctx"] = {
+                        "active": True,
+                        "frame_path": slot_path,
+                        "crop_x": cx1,
+                        "crop_y": cy1,
+                        "crop_w": cx2 - cx1,
+                        "crop_h": cy2 - cy1,
+                        "full_w": fw,
+                        "full_h": fh,
+                        "person": person,
+                        "all_persons": [person],
+                        "confounders": confounders,
+                    }
+                    return pl, cropped
+
+        if person or confounders:
+            pl["_webcam_meta"] = {
+                "person": person,
+                "confounders": confounders,
+            }
 
     return pl, frame
 

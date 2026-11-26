@@ -87,7 +87,7 @@ export default function LiveWebcam() {
   const recentEvents = statusData?.recent_events || []
   const fps = statusData?.fps || 0
 
-  let bannerText = 'พร้อมเปิดกล้องสตรีมสดความเร็วสูง (30 FPS MJPEG)'
+  let bannerText = 'พร้อมเปิดกล้องสตรีมสดแบบเรียลไทม์ (MJPEG Stream)'
   if (streaming) {
     if ((statusData?.objects || []).length > 0) {
       bannerText = 'ตรวจพบวัตถุต้องสงสัย กำลังยืนยันต่อเนื่องหลายเฟรม...'
